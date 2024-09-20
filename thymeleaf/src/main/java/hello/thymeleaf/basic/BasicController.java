@@ -128,6 +128,19 @@ public class BasicController {
         return "basic/comments";
     }
 
+    @GetMapping("/block")
+    public String block(Model model) {
+        addUsersTo(model);
+        return "basic/block";
+    }
+
+    @GetMapping("/javascript")
+    public String javascript(Model model) {
+        model.addAttribute("user", new User("UserA", 15));
+        addUsersTo(model);
+        return "basic/javascript";
+    }
+
     @Data
     static class User {
         private String username;
